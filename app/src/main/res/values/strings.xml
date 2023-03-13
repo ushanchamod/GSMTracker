@@ -11,5 +11,11 @@
     <string name="menu_immense">Immense Mode</string>
     <string name="menu_slighting">Slighting Mode</string>
     <string name="menu_help">Help</string>
+    <string name="immense_logo">immense logo</string>
+    <string name="immense_mode">Immense Mode</string>
+    <string name="to_scan_larger_area">To scan larger area</string>
+    <string name="to_scan_small_area">To scan small area</string>
+    <string name="sligting_mode_title">sligting mode title</string>
+    <string name="quick_access_title">Quick Access</string>
 
 </resources>
