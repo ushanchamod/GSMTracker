@@ -1,184 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:background="#F6F6F6"
+    android:padding="8dp"
+    android:orientation="vertical">
 
+<!--    Immense Card -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_immense"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_rounded">
+
+        <ImageView
+            android:id="@+id/immense_logo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/immense_mode_image"
+            android:src="@drawable/baseline_map_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/immense_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/immense_mode"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/immense_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.406" />
+
+        <TextView
+            android:id="@+id/immense_title_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_scan_larger_area"
+            app:layout_constraintStart_toStartOf="@+id/immense_title"
+            app:layout_constraintTop_toBottomOf="@+id/immense_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    Slighting Card-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_sligting"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bg_rounded"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/sligting_logo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/immense_mode_image"
+            android:src="@drawable/blue_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/sligtiong_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/menu_slighting"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sligting_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003" />
+
+        <TextView
+            android:id="@+id/sligtiong_title_discription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_scan_small_area"
+            app:layout_constraintStart_toStartOf="@+id/sligtiong_title"
+            app:layout_constraintTop_toBottomOf="@+id/sligtiong_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    Quick Access-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EFEFEF"
+        android:background="@drawable/bg_rounded"
         android:orientation="vertical"
-        tools:ignore="UselessParent">
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="15dp">
 
-        <androidx.cardview.widget.CardView
+
+        <TextView
+            android:id="@+id/quick_access_id"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quick_access_title"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:textStyle="bold"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="20dp">
+            android:layout_marginBottom="10dp"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="120dp"
-                    android:layout_height="112dp"
-                    android:layout_marginStart="15dp"
-                    android:contentDescription="@string/immense_logo"
-                    android:paddingStart="10dp"
-                    android:src="@drawable/baseline_map_24"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView5"
-                    app:layout_constraintHorizontal_bias="0.882"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ImageContrastCheck,InefficientWeight,RtlSymmetry,Suspicious0dp" />
-
-                <TextView
-                    android:id="@+id/immense_description_id"
-                    android:layout_width="129dp"
-                    android:layout_height="23dp"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="33dp"
-                    android:text="@string/to_scan_larger_area"
-                    android:textColor="#040404"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.009"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/textView5"
-                    tools:ignore="MissingConstraints,TextSizeCheck" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="190dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="@string/menu_immense"
-                    android:textColor="#040404"
-                    android:textSize="24sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4"
-                    tools:ignore="TextSizeCheck" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            app:cardCornerRadius="10dp"
-            app:cardMaxElevation="20dp"
-            >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <ImageView
-                    android:id="@+id/sligting_mode_title"
-                    android:layout_width="120dp"
-                    android:layout_height="112dp"
-                    android:layout_marginStart="16dp"
-                    android:contentDescription="@string/sligting_mode_title"
-                    android:paddingStart="10dp"
-                    android:src="@drawable/blue_home"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ImageContrastCheck,InefficientWeight,RtlSymmetry,Suspicious0dp" />
-
-                <TextView
-                    android:id="@+id/sligting_discription"
-                    android:layout_width="190dp"
-                    android:layout_height="33dp"
-                    android:layout_marginStart="120dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="@string/menu_slighting"
-                    android:textColor="#040404"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/sligting_mode_title"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.416"
-                    tools:ignore="MissingConstraints,TextSizeCheck" />
-
-                <TextView
-                    android:id="@+id/slighting_description_id"
-                    android:layout_width="129dp"
-                    android:layout_height="23dp"
-                    android:layout_marginStart="1dp"
-                    android:text="@string/to_scan_small_area"
-                    android:textColor="#040404"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/sligting_mode_title"
-                    app:layout_constraintTop_toBottomOf="@+id/sligting_discription"
-                    tools:ignore="MissingConstraints,TextSizeCheck,VisualLintOverlap" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#EFEFEF"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginTop="15dp"
-            android:paddingHorizontal="10dp"
+            tools:ignore="SpeakableTextPresentCheck">
 
-            android:orientation="vertical">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textColor="#000"
-                android:paddingTop="10dp"
-                android:text="@string/quick_access_title" />
+                android:orientation="vertical">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#EFEFEF"
-                tools:ignore="SpeakableTextPresentCheck">
-
-                <LinearLayout
+                <!--                Card-->
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:orientation="vertical">
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_rounded">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginVertical="5dp"
-                        app:cardCornerRadius="15dp" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/quick_access_immense_card_id"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:contentDescription="quick access immense card"
+                        android:src="@drawable/baseline_map_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.511"
+                        tools:ignore="ImageContrastCheck" />
 
-            </ScrollView>
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/quick_access_immense_card_001_clock"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="quick_access_immense_card_001_clock"
+                        android:src="@drawable/clock"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/quick_access_immense_card_001_time"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.676" />
+
+                    <ImageView
+                        android:id="@+id/quick_access_immense_card_001_calender"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="quick_access_immense_card_001_calender"
+                        android:src="@drawable/calendar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/quick_access_immense_card_001_date"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.307" />
+
+                    <TextView
+                        android:id="@+id/quick_access_immense_card_001_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/immense_mode"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/quick_access_immense_card_id"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.357" />
+
+                    <TextView
+                        android:id="@+id/quick_access_immense_card_001_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home - Weerapura Ground"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/quick_access_immense_card_001_title"
+                        app:layout_constraintTop_toBottomOf="@+id/quick_access_immense_card_001_title"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/quick_access_immense_card_001_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="2023-02-01"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.303"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/quick_access_immense_card_001_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="28dp"
+                        android:text="3.25 p.m"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/quick_access_immense_card_001_date"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.666"
+                        tools:ignore="SmallSp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="20dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
