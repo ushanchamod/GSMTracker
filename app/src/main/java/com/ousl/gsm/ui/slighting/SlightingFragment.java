@@ -18,14 +18,11 @@ public class SlightingFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlightingViewModel slightingViewModel =
-                new ViewModelProvider(this).get(SlightingViewModel.class);
+
 
         binding = FragmentSlightingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlighting;
-        slightingViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

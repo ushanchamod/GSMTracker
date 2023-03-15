@@ -17,5 +17,7 @@
     <string name="to_scan_small_area">To scan small area</string>
     <string name="quick_access_title">Quick Access</string>
     <string name="immense_mode_image">Immense mode image</string>
+    <string name="dbm">dBm</string>
+    <string name="save">Save</string>
 
 </resources>

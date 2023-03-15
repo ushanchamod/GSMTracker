@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.ousl.gsm.R;
 import com.ousl.gsm.databinding.FragmentImmenseBinding;
 
 
@@ -19,16 +19,20 @@ public class ImmenseFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ImmenseViewModel immenseViewModel =
-                new ViewModelProvider(this).get(ImmenseViewModel.class);
+
 
         binding = FragmentImmenseBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textImmense;
-        immenseViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        // Add a TextView to the fragment and set its text
+        TextView textView = root.findViewById(R.id.text_immense);
+        textView.setText("Immense Fragment");
+
+
         return root;
     }
+
+
 
     @Override
     public void onDestroyView() {
