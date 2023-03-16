@@ -30,14 +30,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
-            android:paddingHorizontal="10dp"
             android:orientation="vertical" >
 
             <!-- FAQ Card, FAQ Card, FAQ Card, FAQ Card -->
+
+<!--            Q1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="45dp"
+                android:elevation="5dp"
+                android:layout_marginHorizontal="10dp"
                 android:background="@drawable/bg_rounded"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
@@ -69,7 +72,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.571" />
+                        app:layout_constraintVertical_bias="0.571"
+                        tools:ignore="ImageContrastCheck"
+                        android:contentDescription="TODO" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,11 +111,13 @@
 
             </LinearLayout>
 
-
+<!--            Q2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="45dp"
+                android:elevation="5dp"
+                android:layout_marginHorizontal="10dp"
                 android:background="@drawable/bg_rounded"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
@@ -125,7 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="How to use this mobile application?"
+                        android:text="What is slighting mode?"
                         android:textColor="#FF5722"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -142,7 +149,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.571" />
+                        app:layout_constraintVertical_bias="0.571"
+                        tools:ignore="ImageContrastCheck"
+                        android:contentDescription="TODO" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -150,14 +159,114 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <!-- This is for discription (that can have image also)-->
+                    <!--                    This is for discription (that can have image also)-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/FAQ_two_discription"
+                            android:id="@+id/FAQ_two_discription_part_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:text="Sighting mode is mode that use measure signal strength in small geographical area. \nYou can access this mode easily clicking 'Slighting Mode' button in home page. \nAnd also you can find link in the side bar to access this mode"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:paddingBottom="15dp"
+                            app:layout_constraintVertical_bias="0.5"
+                            tools:ignore="VisualLintLongText" />
+
+
+                        <ImageView
+                            android:id="@+id/FAQ_two_sligtion_mode_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/slighting_mode" />
+
+                        <TextView
+                            android:id="@+id/FAQ_two_discription_part_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:text="Once you open 'Slighting Mode' automatically start tracking signal strength. \nif you want to save signal strength with title you can pressing 'SAVE' button."
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:paddingBottom="15dp"
+                            app:layout_constraintVertical_bias="0.5"
+                            tools:ignore="VisualLintLongText" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </LinearLayout>
+
+<!--            Q3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp"
+                android:elevation="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/bg_rounded"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/FAQ_toggle_btn_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <!--                    Quistion-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="What is immense mode?"
+                        android:textColor="#FF5722"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="19dp"
+                        android:src="@drawable/faq_toggle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571"
+                        tools:ignore="ImageContrastCheck"
+                        android:contentDescription="TODO" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--                    This is for discription (that can have image also)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/FAQ_three_discription"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="16dp"
@@ -178,6 +287,7 @@
 
 
             </LinearLayout>
+
 
 
         </LinearLayout>

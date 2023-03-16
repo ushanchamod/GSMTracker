@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:layout_marginTop="10dp"
     tools:context=".ui.slighting.SlightingFragment"
     android:id="@+id/slighting_mode_main_view">
 
@@ -13,7 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2.5"
-        android:paddingHorizontal="20dp">
+        android:elevation="5dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingHorizontal="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="10dp">
 
         <TextView
             android:id="@+id/signal_strength_value"
@@ -60,7 +64,10 @@
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_weight="2"
-        android:background="@drawable/bg_rounded">
+        android:elevation="5dp"
+        android:background="@drawable/bg_rounded"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="10dp">
 
         <TextView
             android:id="@+id/textView4"
@@ -88,7 +95,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
                 android:orientation="vertical">
 
@@ -97,6 +104,7 @@
                     android:layout_height="80dp"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginVertical="5dp"
+                    android:elevation="5dp"
                     android:background="@drawable/bg_rounded">
 
                     <ImageView
@@ -158,6 +166,7 @@
                     android:layout_height="80dp"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginVertical="5dp"
+                    android:elevation="5dp"
                     android:background="@drawable/bg_rounded">
 
                     <ImageView
@@ -170,18 +179,19 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.509"
-                        android:contentDescription="TODO002" />
+                        android:contentDescription="TODO003" />
 
                     <TextView
-                        android:id="@+id/dgfduy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:text="Class Room"
+                        android:text="My Home"
                         android:textColor="#009688"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.301" />
@@ -218,6 +228,7 @@
                     android:layout_height="80dp"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginVertical="5dp"
+                    android:elevation="5dp"
                     android:background="@drawable/bg_rounded">
 
                     <ImageView
@@ -230,13 +241,13 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.509"
-                        android:contentDescription="TODO_001" />
+                        android:contentDescription="TODO003" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:text="Living Room"
+                        android:text="My Home"
                         android:textColor="#009688"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -251,7 +262,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:text="08.10 p.m"
+                        android:text="02.10 p.m"
                         android:textColor="#000"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -263,7 +274,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="20 dBm"
+                        android:text="87 dBm"
                         android:textColor="#000"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -274,6 +285,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

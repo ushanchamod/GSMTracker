@@ -25,8 +25,8 @@ public class ImmenseFragment extends Fragment {
         View root = binding.getRoot();
 
         // Add a TextView to the fragment and set its text
-        TextView textView = root.findViewById(R.id.text_immense);
-        textView.setText("Immense Fragment");
+//        TextView textView = root.findViewById(R.id.text_immense);
+//        textView.setText("Immense Fragment");
 
 
         return root;
