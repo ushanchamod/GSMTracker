@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,12 +15,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSM"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false"
+            android:label="Register"/>
+
+        <activity
+            android:name=".ui.immense.ImmenseFragment"
+            android:exported="false"
+            android:label="@string/title_activity_immense" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCBFxLphfqMSYvCzY4Q2WbgJZWwGvoLfSA" />
+
+        <activity
+            android:name=".ui.immense.MapsActivityImmense"
+            android:exported="false"
+            android:label="@string/title_activity_maps_immense" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GSM.NoActionBar">
             <intent-filter>
+
+                <!-- <action android:name="android.intent.action.MAIN" /> -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

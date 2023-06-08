@@ -9,13 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
 
 import com.ousl.gsm.R;
 import com.ousl.gsm.databinding.FragmentHomeBinding;
-import com.ousl.gsm.ui.immense.ImmenseFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -43,14 +39,7 @@ public class HomeFragment extends Fragment {
         immenseCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_immense);
-//                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.nav_host_fragment_content_main, new ImmenseFragment());
-//                fragmentTransaction.addToBackStack(null);
-//
-//                // Commit the transaction
-//                fragmentTransaction.commit();
+
             }
         });
 
