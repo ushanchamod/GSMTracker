@@ -41,6 +41,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_immense">ImmenseFragment</string>
+    <string name="title_activity_immense_result">Immense_result</string>
 
 
 </resources>

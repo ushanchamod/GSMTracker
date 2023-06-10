@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.ousl.gsm.DatabaseHelper;
 import com.ousl.gsm.R;
 import com.ousl.gsm.databinding.FragmentImmenseBinding;
 
@@ -25,6 +27,12 @@ public class ImmenseFragment extends Fragment {
     EditText secondsForTrack;
     String text;
     private FragmentImmenseBinding binding;
+
+    DatabaseHelper myDb;
+
+    CustomBaseAdapterImmense customBaseAdapter;
+    ListView listView;
+    String[][] results;
 
 
 
@@ -42,6 +50,19 @@ public class ImmenseFragment extends Fragment {
         secondsForTrack = root.findViewById(R.id.second_for_track);
 
         launchMapActivity();
+
+        // Database
+        myDb = new DatabaseHelper(getActivity());
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String userId = sharedPreferences.getString("user_id", "default value");
+
+
+        results = myDb.retrieveDataFromImmenseMain(Integer.parseInt(userId));
+
+        listView = (ListView) root.findViewById(R.id.immense_list_view);
+        customBaseAdapter = new CustomBaseAdapterImmense(getActivity(), results);
+        listView.setAdapter(customBaseAdapter);
 
         return root;
     }

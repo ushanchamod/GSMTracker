@@ -183,6 +183,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    // Retrieve data from immense main table
+    public String[][] retrieveDataFromImmenseMain(int user_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor results =  db.rawQuery("select * from " + IMMENSE_MAIN_TABLE_NAME + " WHERE " + IMMENSE_MAIN_TABLE_NAME_COL_2 + " = " + "\""+user_id+"\"" , null);
+
+        String[][] data = new String[results.getCount()][5];
+        int i = 0;
+        while(results.moveToNext()){
+            data[i][0] = results.getString(0);
+            data[i][1] = results.getString(1);
+            data[i][2] = results.getString(2);
+            data[i][3] = results.getString(3);
+            data[i][4] = results.getString(4);
+            i++;
+        }
+        return data;
+    }
+
 
     // insert data to immense description table
     public boolean insertDataToImmenseDescription(String immense_main_id, String latitude, String longitude, String signal_strength){

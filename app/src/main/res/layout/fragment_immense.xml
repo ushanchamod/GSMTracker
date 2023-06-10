@@ -138,90 +138,17 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"/>
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#fff">
+            android:layout_marginVertical="2dp"
+            >
 
-            <!-- Records container -->
-            <LinearLayout
+            <ListView
+                android:id="@+id/immense_list_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
-                android:orientation="vertical">
-
-                <!-- Records -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginHorizontal="3dp"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/bg_rounded"
-                    android:elevation="4dp">
-
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="16dp"
-                        android:contentDescription="@string/quick_access_immense_card"
-                        android:src="@drawable/baseline_map_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.511"
-                        tools:ignore="ImageContrastCheck" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="64dp"
-                        android:text="School Ground"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.375" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="64dp"
-                        android:layout_marginTop="44dp"
-                        android:text="02.10p.m"
-                        android:textSize="10sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="SmallSp" />
-
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/guideline2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_begin="20dp" />
-
-                    <Button
-                        android:layout_width="97dp"
-                        android:layout_height="48dp"
-                        android:text="@string/see_more"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.942"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:backgroundTint="#303030"
-                        tools:ignore="SmallSp,TextSizeCheck" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-        </ScrollView>
+                android:layout_height="352dp" />
+        </LinearLayout>
 
 
     </LinearLayout>
