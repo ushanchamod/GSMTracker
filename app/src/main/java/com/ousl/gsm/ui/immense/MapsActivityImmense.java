@@ -237,8 +237,6 @@ public class MapsActivityImmense extends FragmentActivity implements OnMapReadyC
     protected void onStop() {
         super.onStop();
 
-        Log.i("onStop", "onStop");
-
         // Stop the timer
         if(timer != null){
             timer.cancel();

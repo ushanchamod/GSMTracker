@@ -45,6 +45,7 @@ public class CustomBaseAdapter extends BaseAdapter {
     @SuppressLint({"ViewHolder", "SetTextI18n"})
     @Override
     public View getView(int position, View contextView, ViewGroup parent) {
+
         contextView = inflater.inflate(R.layout.slighting_card, null);
         TextView textViewLocation = (TextView) contextView.findViewById(R.id.slighting_card_location);
         TextView textViewTime = (TextView) contextView.findViewById(R.id.slighting_card_time);

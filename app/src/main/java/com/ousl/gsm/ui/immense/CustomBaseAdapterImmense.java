@@ -2,6 +2,7 @@ package com.ousl.gsm.ui.immense;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,9 +46,9 @@ public class CustomBaseAdapterImmense extends BaseAdapter {
         contextView = inflater.inflate(R.layout.immense_card, null);
 
         // get views
-        TextView title = (TextView) contextView.findViewById(R.id.immense_card_title);
-        TextView date_time = (TextView) contextView.findViewById(R.id.date_time);
-        Button see_more_btn = (Button) contextView.findViewById(R.id.see_more_btn);
+        TextView title = contextView.findViewById(R.id.immense_card_title);
+        TextView date_time = contextView.findViewById(R.id.date_time);
+        Button see_more_btn = contextView.findViewById(R.id.see_more_btn);
 
         // set values
         title.setText(data[position][2]);
@@ -56,7 +57,14 @@ public class CustomBaseAdapterImmense extends BaseAdapter {
         // handle button press
         see_more_btn.setOnClickListener(view -> {
             String title1 = data[position][2];
-            Toast.makeText(context, title1, Toast.LENGTH_SHORT).show();
+            String id = data[position][0];
+            Toast.makeText(context, id, Toast.LENGTH_SHORT).show();
+
+            // Open ImmenseResult activity
+            Intent intent = new Intent(context, ImmenseResult.class);
+            intent.putExtra("id", id);
+            intent.putExtra("title", title1);
+            context.startActivity(intent);
         });
 
 
