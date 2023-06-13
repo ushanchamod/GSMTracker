@@ -26,6 +26,7 @@ public class ImmenseFragment extends Fragment {
     TextInputLayout title;
     EditText secondsForTrack;
     String text;
+    String userId;
     private FragmentImmenseBinding binding;
 
     DatabaseHelper myDb;
@@ -34,6 +35,7 @@ public class ImmenseFragment extends Fragment {
     ListView listView;
     String[][] results;
 
+    View root;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -41,7 +43,7 @@ public class ImmenseFragment extends Fragment {
 
 
         binding = FragmentImmenseBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = binding.getRoot();
 
         btnOpenMapActivity = root.findViewById(R.id.start_tracking_btn);
 
@@ -55,8 +57,7 @@ public class ImmenseFragment extends Fragment {
         myDb = new DatabaseHelper(getActivity());
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String userId = sharedPreferences.getString("user_id", "default value");
-
+        userId = sharedPreferences.getString("user_id", "default value");
 
         results = myDb.retrieveDataFromImmenseMain(Integer.parseInt(userId));
 
@@ -103,5 +104,11 @@ public class ImmenseFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
     }
 }

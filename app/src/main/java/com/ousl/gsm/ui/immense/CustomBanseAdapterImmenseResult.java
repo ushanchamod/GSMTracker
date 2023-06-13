@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -55,17 +56,33 @@ public class CustomBanseAdapterImmenseResult extends BaseAdapter {
 
         latitude.setText(String.valueOf(latitudeVal));
         longitude.setText(String.valueOf(longitudeVal));
-        strength.setText(data[position][4]);
+        strength.setText(data[position][4] + " dBm");
 
         // set on click listener
         contextView.setOnClickListener(view -> {
             // access mMap object from ImmenseResult.java
             ImmenseResult.mMap.clear();
 
-            // add marker to map
+//            // add marker to map
+//            LatLng loc = new LatLng(latitudeVal, longitudeVal);
+//            ImmenseResult.mMap.addMarker(new MarkerOptions().position(loc).title(signalStrength + " dBm"));
+//            ImmenseResult.mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
+
+            // Define the zoom level you want
+            float zoomLevel = 15.0f;
+
+            // Create a LatLng object with the desired location
             LatLng loc = new LatLng(latitudeVal, longitudeVal);
+
+            // Create a CameraUpdate object to change the zoom level
+            CameraUpdate zoomCameraUpdate = CameraUpdateFactory.newLatLngZoom(loc, zoomLevel);
+
+            // Move the camera to the specified location with the new zoom level
+            ImmenseResult.mMap.moveCamera(zoomCameraUpdate);
+
+            // Add a marker to the map
             ImmenseResult.mMap.addMarker(new MarkerOptions().position(loc).title(signalStrength + " dBm"));
-            ImmenseResult.mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
+
         });
 
         return contextView;

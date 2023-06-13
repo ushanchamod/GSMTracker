@@ -33,6 +33,11 @@
             android:value="AIzaSyCBFxLphfqMSYvCzY4Q2WbgJZWwGvoLfSA" />
 
         <activity
+            android:name=".ui.slighting.SlightingFragment"
+            android:exported="false"
+            android:label="SlightingFragment" />
+
+        <activity
             android:name=".ImmenseResult"
             android:exported="false"
             android:label="@string/title_activity_immense_result" />

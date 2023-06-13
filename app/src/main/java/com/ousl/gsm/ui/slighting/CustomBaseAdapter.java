@@ -7,12 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.ousl.gsm.DatabaseHelper;
 import com.ousl.gsm.R;
 
 public class CustomBaseAdapter extends BaseAdapter {
     Context context;
     String[][] data;
+    DatabaseHelper myDb;
 
     String locations[];
 
@@ -57,6 +62,38 @@ public class CustomBaseAdapter extends BaseAdapter {
         textViewStrength.setText(data[position][4] + " dBm");
         textViewDate.setText(data[position][2]);
 
+        View finalContextView = contextView;
+        contextView.setOnLongClickListener(v -> {
+            showConfirmationDialog(data[position][0], finalContextView);
+            return true;
+        });
+
         return contextView;
+    }
+
+    private void showConfirmationDialog(String id, View contextView){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Confirmation")
+                .setMessage("Do you want to delete this record?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    // User clicked "Yes"
+                    myDb = new DatabaseHelper(context);
+                    boolean result = myDb.deleteDataFromSligtingTable(Integer.parseInt(id));
+
+                    if(result){
+                        Toast.makeText(context, "Record Deleted Successfully", Toast.LENGTH_SHORT).show();
+                        // Hide contextView
+                        contextView.setVisibility(View.GONE);
+
+                    }else{
+                        Toast.makeText(context, "Record Deletion Failed", Toast.LENGTH_SHORT).show();
+                    }
+
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    // User clicked "No"
+                })
+                .setCancelable(false) // Prevent the dialog from being dismissed by tapping outside
+                .show();
     }
 }

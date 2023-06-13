@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -21,7 +22,6 @@ import com.ousl.gsm.ui.login.LoginActivity;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,30 +58,49 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
+        navigateToImmenseFragment(navController);
+        navigateToSligtingFragment(navController);
     }
 
+
+    // navigate to ImmenseFragment
+    public void navigateToImmenseFragment(NavController navController) {
+        TextView immenseCard = findViewById(R.id.immense_title);
+
+        immenseCard.setOnClickListener(view -> {
+            navController.navigate(R.id.nav_immense);
+        });
+    }
+
+
+    // navigate to SligtingFragment
+    public void navigateToSligtingFragment(NavController navController) {
+        TextView sligtingCard = findViewById(R.id.sligtiong_title);
+
+        sligtingCard.setOnClickListener(view -> {
+            navController.navigate(R.id.nav_slighting);
+        });
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
-        menu.findItem(R.id.action_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                // clear the authentication flag from SharedPreferences
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.remove("is_authenticated");
-                editor.apply();
+        menu.findItem(R.id.action_logout).setOnMenuItemClickListener(item -> {
+            // clear the authentication flag from SharedPreferences
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("is_authenticated");
+            editor.apply();
 
-                // launch LoginActivity and finish the MainActivity
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+            // launch LoginActivity and finish the MainActivity
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
 
-                return true;
-            }
+            return true;
         });
 
         return true;

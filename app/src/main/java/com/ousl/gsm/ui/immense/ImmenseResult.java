@@ -8,16 +8,14 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.ousl.gsm.DatabaseHelper;
 import com.ousl.gsm.R;
 import com.ousl.gsm.databinding.ActivityImmenseResultBinding;
@@ -25,7 +23,6 @@ import com.ousl.gsm.databinding.ActivityImmenseResultBinding;
 public class ImmenseResult extends FragmentActivity implements OnMapReadyCallback {
 
     public static GoogleMap mMap;
-    private ActivityImmenseResultBinding binding;
 
     String id, title;
     TextView pageTitle;
@@ -39,7 +36,7 @@ public class ImmenseResult extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityImmenseResultBinding.inflate(getLayoutInflater());
+        com.ousl.gsm.databinding.ActivityImmenseResultBinding binding = ActivityImmenseResultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Get the Intent that started this activity and extract the string
@@ -76,22 +73,19 @@ public class ImmenseResult extends FragmentActivity implements OnMapReadyCallbac
             Log.i("results123", "results: " + e.getMessage());
         }
 
-        ListView listView = (ListView) findViewById(R.id.immense_result_list_view);
+        ListView listView = findViewById(R.id.immense_result_list_view);
         CustomBanseAdapterImmenseResult customBaseAdapter = new CustomBanseAdapterImmenseResult(getBaseContext(), results);
         listView.setAdapter(customBaseAdapter);
-
-
     }
 
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-
             getCurrentLocation();
         } else {
             requestLocationPermission();
@@ -100,12 +94,13 @@ public class ImmenseResult extends FragmentActivity implements OnMapReadyCallbac
             finish();
             startActivity(getIntent());
 
+
         }
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        // Add a marker in Sydney and move the camera
+//        LatLng sydney = new LatLng(-34, 151);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
 
     }

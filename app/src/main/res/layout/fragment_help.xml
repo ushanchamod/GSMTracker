@@ -270,7 +270,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="16dp"
-                            android:text="How to use this mobile application? How to use this mobile application? How to use this mobile application? How to use this mobile application? How to use this mobile application?"
+                            android:text="HImmense mode is mode that can measure the signal strength of larger geographical areas. After tracking location you can save data(signel strngth, location) and you can see your recorded data in immense mode screen."
                             android:textColor="#000"
                             android:textSize="16sp"
                             android:textStyle="normal"

@@ -58,8 +58,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // create sligting table
         db.execSQL("CREATE TABLE " + SLIGTING_TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, LOCATION TEXT, DATE TEXT, TIME TEXT, STRENGTH TEXT, USER_ID TEXT)" );
 
-
-
         // create immense main table
         db.execSQL("CREATE TABLE " + IMMENSE_MAIN_TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT,TITLE TXT ,DATE TEXT, TIME TEXT)" );
 
@@ -105,22 +103,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return results;
     }
 
-//    public boolean updateData(String id, String task, String date, String time){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(COL_2, task);
-//        contentValues.put(COL_3, date);
-//        contentValues.put(COL_4, time);
-//
-//        db.update(TABLE_NAME, contentValues,"ID = ?", new String[] {id});
-//        return true;
-//    }
-
-//    public Integer deleteData(String id){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        return db.delete(TABLE_NAME, "ID = ? ", new String[] {id});
-//    }
-
 
     // SLIGTING TABLE
 
@@ -162,6 +144,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    // delete record from sligting table using unique table ID
+    public boolean deleteDataFromSligtingTable(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(SLIGTING_TABLE_NAME, SLIGTING_TABLE_NAME_COL_1 + "=" + id, null) > 0;
+    }
 
 
     // IMMENSE MODE
